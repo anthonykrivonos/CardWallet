@@ -1,0 +1,16 @@
+<ion-card>
+      <ion-card-header>
+            {{cardType}} Card
+            <p>{{cardholderName}}</p>
+      </ion-card-header>
+      <ion-card-content>
+            <h1>{{cardNumber}}</h1>
+            <h2>Expires {{expiryMonth}}/{{expiryYear}}</h2>
+            <h3>Postal Code: {{postalCode}}</h3>
+      </ion-card-content>
+      <ion-row>
+            <ion-col>
+                  <div small>CVV: {{cvv}}</div>
+            </ion-col>
+      </ion-row>
+</ion-card>

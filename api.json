@@ -1,0 +1,10 @@
+{
+      "cardholderName": "Test",
+      "cardNumber": "1234567812345",
+      "redactedCardNumber": "2345",
+      "expiryMonth": "04",
+      "expiryYear": "17",
+      "cvv": "123",
+      "postalCode": "12345",
+      "cardType": "Visa"
+}

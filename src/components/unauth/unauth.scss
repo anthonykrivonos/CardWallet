@@ -1,0 +1,18 @@
+unauth {
+      .content {
+            height: 100%;
+            width: 100%;
+            background: color($colors, primary) !important;
+            color: white;
+            div {
+                  text-align: center;
+                  position:absolute;
+                  left: 0;
+                  right: 0;
+                  margin:0 auto;
+                  top:50%;
+                  transform:translateY(-50%);
+                  font-size: 6vh;
+            }
+      }
+}

@@ -1,0 +1,74 @@
+{
+  "_from": "cordova-plugin-fingerprint-aio",
+  "_id": "cordova-plugin-fingerprint-aio@1.3.3",
+  "_inBundle": false,
+  "_integrity": "sha1-mCJTJG2Pu6YAkmWd2aqjAPdlYOU=",
+  "_location": "/cordova-plugin-fingerprint-aio",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-fingerprint-aio",
+    "name": "cordova-plugin-fingerprint-aio",
+    "escapedName": "cordova-plugin-fingerprint-aio",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-fingerprint-aio/-/cordova-plugin-fingerprint-aio-1.3.3.tgz",
+  "_shasum": "982253246d8fbba60092659dd9aaa300f76560e5",
+  "_spec": "cordova-plugin-fingerprint-aio",
+  "_where": "/Users/Anthony/dev/CardWallet/node_modules",
+  "author": {
+    "name": "Niklas Merz"
+  },
+  "bugs": {
+    "url": "https://github.com/niklasmerz/cordova-plugin-fingerprint-aio/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-fingerprint-aio",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "cordova-plugin-add-swift-support": "^1.7.0"
+  },
+  "deprecated": false,
+  "description": "Cordova plugin to use fingerprint authentication on Android and iOS",
+  "devDependencies": {
+    "cordova-paramedic": "^0.5.0",
+    "cordova-plugin-xml": "^0.1.2",
+    "eslint": "^4.8.0",
+    "jasmine": "*"
+  },
+  "homepage": "https://github.com/niklasmerz/cordova-plugin-fingerprint-aio#readme",
+  "keywords": [
+    "cordova",
+    "plugin",
+    "android",
+    "fingerprint",
+    "authentication",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-fingerprint-aio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niklasmerz/cordova-plugin-fingerprint-aio.git"
+  },
+  "scripts": {
+    "plugin-version": "cordova-plugin-xml setVersion",
+    "test": "./node_modules/cordova-paramedic/main.js --plugin . --device --platform"
+  },
+  "version": "1.3.3"
+}

@@ -1,0 +1,40 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "card.io.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        },
+        "cordova-plugin-fingerprint-aio": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        },
+        "cordova-plugin-ionic-webview": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-add-swift-support": {
+            "PACKAGE_NAME": "com.cardwallet.anthonykrivonos"
+        }
+    }
+}
