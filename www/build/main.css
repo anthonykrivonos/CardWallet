@@ -25679,6 +25679,15 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+cards ion-slides {
+  height: 90vh;
+  margin-top: 10vh;
+}
+
+cards ion-slides ion-slide {
+  height: 33% !important;
+}
+
 shutter ion-footer {
   margin-bottom: 2vh;
 }
@@ -25687,13 +25696,12 @@ shutter ion-footer button {
   border-radius: 50% !important;
   width: 10vh !important;
   height: 10vh !important;
-  font-size: 4vh !important;
+  font-size: 5vh !important;
 }
 
 unauth .content {
-  height: 100%;
-  width: 100%;
-  background: #488aff !important;
+  height: 100vh;
+  width: 100vh;
   color: white;
 }
 
@@ -25707,4 +25715,9 @@ unauth .content div {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   font-size: 6vh;
+}
+
+page-home ion-scroll {
+  height: 100vh !important;
+  background: #488aff !important;
 }

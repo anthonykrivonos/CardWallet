@@ -5,9 +5,10 @@
             </ion-title>
       </ion-navbar>
 </ion-header>
-<ion-content no-padding>
-      <unauth *ngIf="(!cards || cards?.length == 0)&& authenticated" [text]="'No cards available.'"></unauth>
+<ion-scroll no-padding>
+      <unauth *ngIf="cardsLoaded && cards?.length == 0 && authenticated" [text]="'No cards available.'"></unauth>
       <unauth *ngIf="!authenticated" [text]="'User not authenticated.'"></unauth>
-      <cards *ngIf="cards && cards?.length > 0" [cards]="cards"></cards>
-</ion-content>
-<shutter (tap)="buttonAction()"></shutter>
+      <cards *ngIf="cardsLoaded && cards?.length > 0 && authenticated" [cards]="cards"></cards>
+</ion-scroll>
+<shutter *ngIf="!authenticated" [type]="'authenticate'" (tap)="authenticate()"></shutter>
+<shutter *ngIf="authenticated" [type]="'scan'" (tap)="scan()"></shutter>

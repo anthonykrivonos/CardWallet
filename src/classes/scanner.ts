@@ -25,12 +25,11 @@ export class Scanner {
             return new Promise((resolve, reject) => {
                   this.cardIO.canScan().then((res) => {
                         if (res) {
-                              this.cardIO.scan(this.SCANNER_OPTIONS)
-                              .then((card) => {
+                              this.cardIO.scan(this.SCANNER_OPTIONS).then((card) => {
                                     resolve(card);
                               }).catch(() => {
                                     reject();
-                              })
+                              });
                         } else {
                               reject();
                         }

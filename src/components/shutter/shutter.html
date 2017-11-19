@@ -1,3 +1,3 @@
-<ion-footer text-center>
-      <button color="dark" ion-button><ion-icon name="qr-scanner"></ion-icon></button>
+<ion-footer *ngIf="type" text-center>
+      <button color="dark" ion-button><ion-icon name="{{type == 'authenticate' ? 'md-finger-print' : 'qr-scanner'}}"></ion-icon></button>
 </ion-footer>

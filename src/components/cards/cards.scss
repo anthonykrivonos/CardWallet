@@ -1,7 +1,9 @@
 cards {
       ion-slides {
+            height: 90vh;
+            margin-top: 10vh;
             ion-slide {
-                  
+                  height: 33% !important;
             }
       }
 }

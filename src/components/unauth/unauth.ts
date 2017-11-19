@@ -5,7 +5,6 @@ import { Input, Component } from '@angular/core';
       templateUrl: 'unauth.html'
 })
 export class UnauthComponent {
-
       @Input() text:string;
 
       constructor() {}

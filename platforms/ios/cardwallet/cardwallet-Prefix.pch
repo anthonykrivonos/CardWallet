@@ -17,7 +17,7 @@
  under the License.
  */
 //
-// Prefix header for all source files of the 'cardwallet' target in the 'cardwallet' project
+// Prefix header for all source files of the 'CardWallet' target in the 'CardWallet' project
 //
 
 #ifdef __OBJC__

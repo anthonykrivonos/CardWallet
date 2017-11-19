@@ -9,6 +9,14 @@ module.exports = [
     ]
   },
   {
+    "id": "cordova-plugin-actionsheet.ActionSheet",
+    "file": "plugins/cordova-plugin-actionsheet/www/ActionSheet.js",
+    "pluginId": "cordova-plugin-actionsheet",
+    "clobbers": [
+      "window.plugins.actionsheet"
+    ]
+  },
+  {
     "id": "cordova-plugin-device.device",
     "file": "plugins/cordova-plugin-device/www/device.js",
     "pluginId": "cordova-plugin-device",
@@ -66,12 +74,21 @@ module.exports = [
       "cordova.plugins.Keyboard"
     ],
     "runs": true
+  },
+  {
+    "id": "cordova-plugin-statusbar.statusbar",
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "pluginId": "cordova-plugin-statusbar",
+    "clobbers": [
+      "window.StatusBar"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
   "card.io.cordova.mobilesdk": "2.1.0",
+  "cordova-plugin-actionsheet": "2.3.3",
   "cordova-plugin-add-swift-support": "1.7.0",
   "cordova-plugin-device": "1.1.4",
   "cordova-plugin-fingerprint-aio": "1.3.3",
@@ -79,7 +96,8 @@ module.exports.metadata =
   "cordova-plugin-nativestorage": "2.2.2",
   "cordova-plugin-splashscreen": "4.0.3",
   "cordova-plugin-whitelist": "1.3.1",
-  "ionic-plugin-keyboard": "2.2.1"
+  "ionic-plugin-keyboard": "2.2.1",
+  "cordova-plugin-statusbar": "2.3.0"
 };
 // BOTTOM OF METADATA
 });

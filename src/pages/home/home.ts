@@ -1,5 +1,5 @@
-import { OnInit, Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { Events, NavController } from 'ionic-angular';
 
 import { Fingerprint } from '../../classes/fingerprint';
 import { Scanner } from '../../classes/scanner';
@@ -9,51 +9,40 @@ import { Storage } from '../../classes/storage';
       selector: 'page-home',
       templateUrl: 'home.html'
 })
-export class HomePage implements OnInit {
+export class HomePage {
       public authenticated:boolean;
-      public cards:any;
+      public cardsLoaded:boolean;
+      public cards:Array<any>;
 
-      constructor(public navCtrl: NavController, private fingerprint:Fingerprint, private scanner:Scanner, private storage:Storage) {}
-
-      ngOnInit():void {
-            // this.cards = [
-            //       {
-            //             cardholderName: "Test",
-            //             cardNumber: "1234567812345",
-            //             redactedCardNumber: "2345",
-            //             expiryMonth: "04",
-            //             expiryYear: "17",
-            //             cvv: "123",
-            //             postalCode: "12345",
-            //             cardType: "Visa",
-            //             index: "0"
-            //       }
-            // ];
+      constructor(private events:Events, private navCtrl: NavController, private fingerprint:Fingerprint, private scanner:Scanner, private storage:Storage) {
+            events.subscribe('cards:update', () => {
+                  this.updateCards();
+            });
       }
 
-      buttonAction():void {
-            if (!this.authenticated) {
-                  this.fingerprint.authenticate().then(() => {
-                        this.authenticated = true;
-                        this.storage.getAllCards().then((cards) => {
-                              this.cards = cards;
-                        }).catch(() => {
-                              alert("couldn't get all cards");
-                        });
-                  }).catch(() => {
-                        alert("couldn't authenticate");
+      updateCards():void {
+            this.cardsLoaded = false;
+            this.storage.getAllCards().then((cards:Array<any>) => {
+                  this.cards = [];
+                  setTimeout(() => {
+                        this.cards = cards;
+                        this.cardsLoaded = true;
+                  }, 500);
+            });
+      }
+
+      authenticate():void {
+            this.fingerprint.authenticate().then(() => {
+                  this.authenticated = true;
+                  this.events.publish('cards:update');
+            });
+      }
+
+      scan():void {
+            this.scanner.scan().then((card) => {
+                  this.storage.addCard(card).then(() => {
+                        this.events.publish('cards:update');
                   });
-            } else {
-                  this.scanner.scan().then((card) => {
-                        alert(`Got card:\n${JSON.stringify(card)}`)
-                        this.storage.addCard(card).then((cards) => {
-                              this.cards = cards;
-                        }).catch(() => {
-                              alert("couldn't add new card");
-                        });
-                  }).catch(() => {
-                        alert("couldn't scan");
-                  });
-            }
+            });
       }
 }

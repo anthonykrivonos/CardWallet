@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.cardwallet.anthonykrivonos" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>cardwallet</name>
+<widget id="com.cardwallet.webinfo" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CardWallet</name>
     <description>Scan and store your credit cards!</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Anthony Krivonos</author>
     <content src="index.html" />
@@ -78,14 +78,19 @@
     </platform>
     <allow-navigation href="http://192.168.1.254:8100" />
     <allow-navigation href="http://169.254.2.218:8100" />
-    <engine name="ios" spec="^4.5.3" />
-    <plugin name="card.io.cordova.mobilesdk" spec="^2.1.0" />
+    <allow-navigation href="http://169.254.4.133:8100" />
+    <allow-navigation href="http://169.254.107.214:8100" />
+    <allow-navigation href="http://169.254.251.231:8100" />
+    <engine name="ios" spec="4.5.3" />
     <plugin name="cordova-plugin-device" spec="^1.1.4" />
-    <plugin name="cordova-plugin-fingerprint-aio" spec="^1.3.3" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
-    <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <allow-navigation href="http://169.254.4.133:8100" />
+    <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />
+    <plugin name="cordova-plugin-fingerprint-aio" spec="^1.3.3" />
+    <plugin name="card.io.cordova.mobilesdk" spec="^2.1.0" />
+    <plugin name="cordova-plugin-actionsheet" spec="^2.3.3" />
+    <allow-navigation href="http://169.254.31.144:8100" />
+    <allow-navigation href="http://169.254.80.90:8100" />
 </widget>

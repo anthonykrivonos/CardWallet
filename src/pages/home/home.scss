@@ -1,3 +1,6 @@
 page-home {
-
+      ion-scroll {
+            height: 100vh !important;
+            background: color($colors, primary) !important;
+      }
 }

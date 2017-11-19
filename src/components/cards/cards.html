@@ -1,22 +1,21 @@
-<ion-slides
+<ion-slides #cardsSlide *ngIf="cards"
       centeredSlides="false"
       direction="vertical"
-      effect="coverflow"
-      loop="true"
       spaceBetween="0"
       speed="400"
-      zoom="true">
-      <ion-slide *ngFor="let card of cards">
+      zoom="true"
+      slidesPerView="3">
+      <ion-slide *ngFor="let card of cards; index as i">
             <card
-                  [cardholderName]="card.cardholderName"
-                  [cardNumber]="card.cardNumber"
-                  [redactedCardNumber]="card.redactedCardNumber"
-                  [expiryMonth]="card.expiryMonth"
-                  [expiryYear]="card.expiryYear"
-                  [cvv]="card.cvv"
-                  [postalCode]="card.postalCode"
-                  [cardType]="card.cardType"
-                  [index]="card.index"
+                  [cardholderName]="card?.cardholderName"
+                  [cardNumber]="card?.cardNumber"
+                  [redactedCardNumber]="card?.redactedCardNumber"
+                  [expiryMonth]="card?.expiryMonth"
+                  [expiryYear]="card?.expiryYear"
+                  [cvv]="card?.cvv"
+                  [postalCode]="card?.postalCode"
+                  [cardType]="card?.cardType"
+                  [index]="i"
             ></card>
       </ion-slide>
 </ion-slides>

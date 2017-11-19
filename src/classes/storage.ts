@@ -10,22 +10,22 @@ export class Storage {
 
       getAllCards():Promise<any> {
             return new Promise((resolve, reject) => {
-                  this.nativeStorage.getItem('cards').then((cards) => {
-                        resolve(cards || []);
+                  this.nativeStorage.getItem('cards').then((cards:Array<any>) => {
+                        resolve(cards);
                   }).catch(() => {
                         this.setAllCards([]).then(() => {
                               resolve([]);
                         }).catch(() => {
-                              reject([]);
+                              reject();
                         });
                   });
             });
       }
 
-      setAllCards(cards:any):Promise<any> {
+      setAllCards(cards:Array<any>):Promise<any> {
             return new Promise((resolve, reject) => {
                   this.nativeStorage.setItem('cards', cards).then(() => {
-                        resolve(cards || []);
+                        resolve(cards);
                   }).catch(() => {
                         reject([]);
                   });
@@ -44,23 +44,23 @@ export class Storage {
 
       addCard(card:any):Promise<any> {
             return new Promise((resolve, reject) => {
-                  this.getAllCards().then((cards) => {
-                        cards = cards.push(card);
-                        this.setAllCards(cards).then(() => {
+                  this.getAllCards().then((cards:Array<any>) => {
+                        cards.push(card);
+                        this.setAllCards(Array.isArray(cards) ? cards : [cards]).then(() => {
                               resolve(cards);
                         }).catch(() => {
                               reject();
                         });
-                  }).catch(() => {
-                        reject();
+                  }).catch((e) => {
+                        reject(e);
                   });
             });
       }
 
       removeCard(index:number):Promise<any> {
             return new Promise((resolve, reject) => {
-                  this.getAllCards().then((cards) => {
-                        cards = cards.splice(index, 1);
+                  this.getAllCards().then((cards:Array<any>) => {
+                        cards.splice(index || 0, 1);
                         this.setAllCards(cards).then(() => {
                               resolve(cards);
                         }).catch(() => {
